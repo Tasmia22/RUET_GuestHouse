@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="author" content="CodexWorld">
+				<link rel="icon" href="https://www.codexworld.com/wp-content/uploads/2014/09/favicon.ico" type="image/x-icon" />
+		        <!--iOS/android/handheld specific -->	
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Add Event to Calendar using jQuery, Ajax and PHP - CodexWorld</title>
+    <link rel="stylesheet" type="text/css" media="all" href="https://www.codexworld.com/wp-content/themes/techblog/style.css" />
+	<link rel="pingback" href="https://www.codexworld.com/xmlrpc.php" />
+        <link href="https://www.codexworld.com/wp-content/themes/techblog/css/bootstrap.css" rel="stylesheet">
+    
+<!-- This site is optimized with the Yoast SEO plugin v9.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Create an event calendar using jQuery, Ajax, PHP, and MySQL - Extend functionality script to add event to calendar using jQuery, Ajax, and PHP."/>
+<link rel="canonical" href="https://www.codexworld.com/add-event-to-calendar-using-jquery-ajax-php/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Add Event to Calendar using jQuery, Ajax and PHP - CodexWorld" />
+<meta property="og:description" content="Create an event calendar using jQuery, Ajax, PHP, and MySQL - Extend functionality script to add event to calendar using jQuery, Ajax, and PHP." />
+<meta property="og:url" content="https://www.codexworld.com/add-event-to-calendar-using-jquery-ajax-php/" />
+<meta property="og:site_name" content="CodexWorld" />
+<meta property="article:publisher" content="https://www.facebook.com/codexworld" />
+<meta property="article:author" content="https://www.facebook.com/codexworld" />
+<meta property="article:tag" content="Ajax" />
+<meta property="article:tag" content="EventCalendar" />
+<meta property="article:tag" content="jQuery" />
+<meta property="article:tag" content="MySQL" />
+<meta property="article:tag" content="PHP" />
+<meta property="article:section" content="PHP" />
+<meta property="article:published_time" content="2016-05-06T17:21:23+00:00" />
+<meta property="og:image" content="https://i2.wp.com/www.codexworld.com/wp-content/uploads/2016/05/add-event-to-calendar-using-jquery-ajax-php-by-codexworld.png?fit=1366%2C768&#038;ssl=1" />
+<meta property="og:image:secure_url" content="https://i2.wp.com/www.codexworld.com/wp-content/uploads/2016/05/add-event-to-calendar-using-jquery-ajax-php-by-codexworld.png?fit=1366%2C768&#038;ssl=1" />
+<meta property="og:image:width" content="1366" />
+<meta property="og:image:height" content="768" />
+<meta property="og:image:alt" content="add-event-to-calendar-using-jquery-ajax-php-by-codexworld" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Create an event calendar using jQuery, Ajax, PHP, and MySQL - Extend functionality script to add event to calendar using jQuery, Ajax, and PHP." />
+<meta name="twitter:title" content="Add Event to Calendar using jQuery, Ajax and PHP - CodexWorld" />
+<meta name="twitter:site" content="@codexworldblog" />
+<meta name="twitter:image" content="https://i2.wp.com/www.codexworld.com/wp-content/uploads/2016/05/add-event-to-calendar-using-jquery-ajax-php-by-codexworld.png?fit=1366%2C768&#038;ssl=1" />
+<meta name="twitter:creator" content="@codexworldblog" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="CodexWorld &raquo; Feed" href="https://www.codexworld.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="CodexWorld &raquo; Comments Feed" href="https://www.codexworld.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="CodexWorld &raquo; Add Event to Calendar using jQuery, Ajax and PHP Comments Feed" href="https://www.codexworld.com/add-event-to-calendar-using-jquery-ajax-php/feed/" />
+		<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/3E987717-6D4B-A745-9C4B-A83752957AC3/main.js" charset="UTF-8"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.codexworld.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=43bcfed3537b86b626eb324a274ecf58"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='GoogleFonts-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%7COswald%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic&#038;ver=43bcfed3537b86b626eb324a274ecf58#038;subset=latin' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.codexworld.com/wp-includes/css/dist/block-library/style.min.css?ver=43bcfed3537b86b626eb324a274ecf58' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack-email-subscribe-css'  href='https://www.codexworld.com/wp-content/plugins/jetpack/modules/shortcodes/css/jetpack-email-subscribe.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://www.codexworld.com/wp-content/plugins/jetpack/css/jetpack.css?ver=6.9' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.codexworld.com/wp-content/themes/techblog/js/jquery.min.js?ver=43bcfed3537b86b626eb324a274ecf58'></script>
+<script type='text/javascript' src='https://www.codexworld.com/wp-content/themes/techblog/js/jquery-ui.min.js?ver=43bcfed3537b86b626eb324a274ecf58'></script>
+<script type='text/javascript' src='https://www.codexworld.com/wp-content/themes/techblog/js/bootstrap.js?ver=43bcfed3537b86b626eb324a274ecf58'></script>
+<link rel='https://api.w.org/' href='https://www.codexworld.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.codexworld.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.codexworld.com/wp-includes/wlwmanifest.xml" /> 
+<!--Theme by CodexWorld.com-->
+<link rel='shortlink' href='https://wp.me/p6bxIh-og' />
+<link rel="alternate" type="application/json+oembed" href="https://www.codexworld.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.codexworld.com%2Fadd-event-to-calendar-using-jquery-ajax-php%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.codexworld.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.codexworld.com%2Fadd-event-to-calendar-using-jquery-ajax-php%2F&#038;format=xml" />
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		if (window.wfLogHumanRan) { return; }
+		window.wfLogHumanRan = true;
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.codexworld.com/?wordfence_lh=1&hid=235A30F2FCEE37576D47F5ACCF3452E3');
+</script>
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel='dns-prefetch' href='//i0.wp.com'/>
+<link rel='dns-prefetch' href='//i1.wp.com'/>
+<link rel='dns-prefetch' href='//i2.wp.com'/>
+<style type='text/css'>img#wpstats{display:none}</style>    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    		<script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5750766974376423",
+            enable_page_level_ads: true
+          });
+        </script>
+	</head>
+
+<body class="post-template-default single single-post postid-1504 single-format-standard cat-4-id">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://www.codexworld.com/" title="CodexWorld Programming Blog">
+                								<img src="https://www.codexworld.com/wp-content/uploads/2014/09/codexworld-logo.png" alt="CodexWorld" />
+					  	
+               	</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                				<ul id="menu-navigation-menus" class="nav navbar-nav"><li id="menu-item-1571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown"><a title="Web Development Tutorials" href="https://www.codexworld.com/tutorials" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li id="menu-item-102" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="PHP  tutorials" href="https://www.codexworld.com/php/">PHP</a></li>	<li id="menu-item-125" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="WordPress tutorials" href="https://www.codexworld.com/wordpress/">WordPress</a></li>	<li id="menu-item-285" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Drupal tutorials" href="https://www.codexworld.com/drupal/">Drupal</a></li>	<li id="menu-item-195" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="CodeIgniter  tutorials" href="https://www.codexworld.com/codeigniter/">CodeIgniter</a></li>	<li id="menu-item-344" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="CakePHP Tutorials" href="https://www.codexworld.com/cakephp/">CakePHP</a></li><!--.dropdown-->
+</ul>
+</li><li id="menu-item-1021" class="menu-item menu-item-type-custom menu-item-object-custom"><a title="How to Guides on Web Development" href="https://www.codexworld.com/how-to/">How To</a></li><li id="menu-item-311" class="menu-item menu-item-type-custom menu-item-object-custom"><a title="Tutorials Demos" href="http://demos.codexworld.com/">Demos</a></li><li id="menu-item-2446" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Buy PHP Scripts, Code, Projects for Web Development" href="https://www.codexworld.com/scripts/">Scripts</a></li><li id="menu-item-1953" class="menu-item menu-item-type-post_type_archive menu-item-object-deals"><a title="Deals, Discount, Coupon on Web Hosting, Themes, and Services" href="https://www.codexworld.com/deals/">Deals</a></li><li id="menu-item-1572" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Web Services" href="https://www.codexworld.com/web-services/">Services</a></li><li id="menu-item-1418" class="menu-item menu-item-type-custom menu-item-object-custom"><a title="Free Online Web Tools" target="_blank" href="http://www.xwebtools.com">Web Tools</a></li></ul>                <ul class="nav navbar-nav navbar-right">
+                	<form name="googleForm" action="https://www.codexworld.com/search" class="navbar-form navbar-left">
+                    <div class="nav-search-el">
+               		<button type="submit" class="btn"> <span class="glyphicon glyphicon-search search-icon"></span></button></div>
+                    <input name="q" id="q" type="text" class="search-input-box" placeholder="Search tutorials" class="form-control" >
+                    </form>
+             	</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container --> 
+    </nav>
+    <div class="bar-header"><!-- HeaderTopAds -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5750766974376423"
+     data-ad-slot="4802459696"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>	
+ 	<div class="container"><div class="row">
+	<div class="col-lg-8">
+	    	            <div class="breadcrumb"><a href="https://www.codexworld.com" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;<a href="https://www.codexworld.com/tutorials/php/" rel="nofollow">PHP</a> &nbsp;&nbsp;&#187;&nbsp;&nbsp; Add Event to Calendar using jQuery, Ajax and PHP</div>
+                <h1 class="single">Add Event to Calendar using jQuery, Ajax and PHP</h1>
+        <hr class="postmeta">
+        <div class="post_comment_social">
+            <div class="post-meta">
+                <span>By: CodexWorld</span><span>In: <a href="https://www.codexworld.com/tutorials/php/" alt="PHP">PHP</a></span><span>Last Updated:&nbsp;May 6, 2016            </div>
+            <div class="socialicons">
+                <span class="socialspace"><a href="javascript:void(0)" class="icon-fb" onclick="javascript:generic_social_share('http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.codexworld.com%2Fadd-event-to-calendar-using-jquery-ajax-php%2F')" title="Facebook"><i class="icon"></i>Share</a></span>
+                <span class="socialspace"><a href="javascript:void(0)" class="icon-tw" onclick="javascript:generic_social_share('http://twitter.com/share?text=Add Event to Calendar using jQuery, Ajax and PHP&amp;url=https://www.codexworld.com/add-event-to-calendar-using-jquery-ajax-php/')" title="Twitter"><i class="icon"></i>Tweet</a></span>
+                <span class="socialspace secondary-shares"><a href="javascript:void(0)" onclick="javascript:generic_social_share('https://plus.google.com/share?url=https%3A%2F%2Fwww.codexworld.com%2Fadd-event-to-calendar-using-jquery-ajax-php%2F')" class="icon-gplus" title="Google"><i class="icon"></i></a></span>
+                <span class="socialspace secondary-shares"><a href="javascript:void(0)" class="icon-linked_in" onclick="javascript:generic_social_share('http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.codexworld.com%2Fadd-event-to-calendar-using-jquery-ajax-php%2F')"><i class="icon"></i></a></span>
+            </div>
+        </div>
+        <hr>
+        <div class="post_content">
+		<div class="img_center videoContainer"><iframe width="870" height="392" src="https://www.youtube.com/embed/qtJlhruQIOU" frameborder="0" allowfullscreen></iframe></div>        <div class="bar-content"><!-- PageTopResponsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5750766974376423"
+     data-ad-slot="2615970894"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>        <p><p>In our first PHP event calendar tutorial, we had shown how to <a href="http://www.codexworld.com/build-event-calendar-using-jquery-ajax-php/">create an event calendar using jQuery, Ajax, and PHP</a>. That tutorial provides the script for generating calendar and display events from the MySQL database on the respective date.</p>
+<p>In this second part of the PHP event calendar tutorial, we&#8217;ll show how to add events to the calendar using jQuery, Ajax, PHP &#038; MySQL. Means we&#8217;ll extend our PHP event calendar script with add event functionality.</p>
+<p>Before you begin, we suggest you read the <a href="http://www.codexworld.com/build-event-calendar-using-jquery-ajax-php/">first part of PHP event calendar tutorial</a>. It will help to understand our event calendar scripts.</p>
+<ul class="bullet_disk_list">
+<li><a href="http://www.codexworld.com/build-event-calendar-using-jquery-ajax-php/">Build an event calendar using jQuery, Ajax and PHP</a></li>
+</ul>
+<p>Files structure of PHP Event Calendar would be the same as the first part.</p>
+<div><img src="https://i0.wp.com/www.codexworld.com/wp-content/uploads/2016/05/add-event-to-calendar-jquery-ajax-php-tutorial-files-structure-codexworld.png?resize=396%2C162&#038;ssl=1" alt="add-event-to-calendar-jquery-ajax-php-tutorial-files-structure-codexworld" width="396" height="162" class="alignnone size-full wp-image-1507" srcset="https://i0.wp.com/www.codexworld.com/wp-content/uploads/2016/05/add-event-to-calendar-jquery-ajax-php-tutorial-files-structure-codexworld.png?w=396&amp;ssl=1 396w, https://i0.wp.com/www.codexworld.com/wp-content/uploads/2016/05/add-event-to-calendar-jquery-ajax-php-tutorial-files-structure-codexworld.png?resize=300%2C123&amp;ssl=1 300w, https://i0.wp.com/www.codexworld.com/wp-content/uploads/2016/05/add-event-to-calendar-jquery-ajax-php-tutorial-files-structure-codexworld.png?resize=200%2C82&amp;ssl=1 200w, https://i0.wp.com/www.codexworld.com/wp-content/uploads/2016/05/add-event-to-calendar-jquery-ajax-php-tutorial-files-structure-codexworld.png?resize=346%2C142&amp;ssl=1 346w" sizes="(max-width: 396px) 100vw, 396px" data-recalc-dims="1" /></div>
+<p>Here we&#8217;ll use the same scripts but the event adding code will be added. Open the <code>functions.php</code> file and make the following changes.<br />
+Add addEvent case on switch-case in <code>functions.php</code> file.</p>
+<pre><span style="color: #007700">case&nbsp;</span><span style="color: #DD0000">'addEvent'</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">addEvent</span><span style="color: #007700">(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'date'</span><span style="color: #007700">],</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'title'</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;break;</span></pre>
+<p>Add new <code>addEvent()</code> function in <code>functions.php</code> file for insert the event data to the MySQL database.</p>
+<pre><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Add&nbsp;event&nbsp;to&nbsp;date<br />&nbsp;*/<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">addEvent</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">,</span><span style="color: #0000BB">$title</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Include&nbsp;db&nbsp;configuration&nbsp;file<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'dbConfig.php'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$currentDate&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"Y-m-d&nbsp;H:i:s"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Insert&nbsp;the&nbsp;event&nbsp;data&nbsp;into&nbsp;database<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$insert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;events&nbsp;(title,date,created,modified)&nbsp;VALUES&nbsp;('"</span><span style="color: #007700">.</span><span style="color: #0000BB">$title</span><span style="color: #007700">.</span><span style="color: #DD0000">"','"</span><span style="color: #007700">.</span><span style="color: #0000BB">$date</span><span style="color: #007700">.</span><span style="color: #DD0000">"','"</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">"','"</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">"')"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$insert</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'ok'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}else{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'err'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}</span></pre>
+<p><b><code>getCalender()</code> function modification:</b><br />
+Add a new block for display the event adding form.</p>
+<pre>&lt;<span style="color:#bf4f24">div</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"event_add"</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"none"</span>>
+    &lt;<span style="color:#bf4f24">p</span>>Add Event on &lt;<span style="color:#bf4f24">span</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"eventDateView"</span>>&lt;/<span style="color:#bf4f24">span</span>>&lt;/<span style="color:#bf4f24">p</span>>
+    &lt;<span style="color:#bf4f24">p</span>>&lt;<span style="color:#bf4f24">b</span>>Event Title: &lt;/<span style="color:#bf4f24">b</span>>&lt;<span style="color:#bf4f24">input</span> <span style="color:#bf4f24">type</span>=<span style="color:#0b6125">"text"</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"eventTitle"</span> <span style="color:#bf4f24">value</span>=<span style="color:#0b6125">""</span>/>&lt;/<span style="color:#bf4f24">p</span>>
+    &lt;<span style="color:#bf4f24">input</span> <span style="color:#bf4f24">type</span>=<span style="color:#0b6125">"hidden"</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"eventDate"</span> <span style="color:#bf4f24">value</span>=<span style="color:#0b6125">""</span>/>
+    &lt;<span style="color:#bf4f24">input</span> <span style="color:#bf4f24">type</span>=<span style="color:#0b6125">"button"</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"addEventBtn"</span> <span style="color:#bf4f24">value</span>=<span style="color:#0b6125">"Add"</span>/>
+&lt;/<span style="color:#bf4f24">div</span>>
+</pre>
+<p>Insert an <b>add event</b> link on date hover popup.</p>
+<pre><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;a&nbsp;href="javascript:void(0);"&nbsp;onclick="addEvent(\''</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">'\');"&gt;add&nbsp;event&lt;/a&gt;'</span><span style="color: #007700">;</span></pre>
+<p>In JavaScript code, <code>getEvents()</code> function need slight modification and new code to be needed for handle event add. <code>addEvent()</code> function is added and Ajax would be called on <code>#addEventBtn</code> click.</p>
+<pre><span style="color:#a71d5d;font-style:italic">function</span> <span style="color:#bf4f24">addEvent</span>(date){
+    <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#eventDate</span>')<span style="color:#693a17">.val</span>(date);
+    <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#eventDateView</span>')<span style="color:#693a17">.html</span>(date);
+    <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#event_list</span>')<span style="color:#693a17">.slideUp</span>(<span style="color:#0b6125">'slow'</span>);
+    <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#event_add</span>')<span style="color:#693a17">.slideDown</span>(<span style="color:#0b6125">'slow'</span>);
+}
+
+<span style="color:#691c97">$</span>(<span style="color:#691c97">document</span>)<span style="color:#693a17">.ready</span>(<span style="color:#a71d5d;font-style:italic">function</span>(){
+    <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#addEventBtn</span>').on(<span style="color:#0b6125">'click'</span>,<span style="color:#a71d5d;font-style:italic">function</span>(){
+        <span style="color:#a71d5d;font-style:italic">var</span> date <span style="color:#794938">=</span> <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#eventDate</span>')<span style="color:#693a17">.val</span>();
+        <span style="color:#a71d5d;font-style:italic">var</span> title <span style="color:#794938">=</span> <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#eventTitle</span>')<span style="color:#693a17">.val</span>();
+        <span style="color:#794938">$</span><span style="color:#693a17">.ajax</span>({
+            type:<span style="color:#0b6125">'POST'</span>,
+            url:<span style="color:#0b6125">'functions.php'</span>,
+            data:<span style="color:#0b6125">'func=addEvent&amp;date='</span><span style="color:#794938">+</span>date<span style="color:#794938">+</span><span style="color:#0b6125">'&amp;title='</span><span style="color:#794938">+</span>title,
+            <span style="color:#bf4f24">success</span>:<span style="color:#a71d5d;font-style:italic">function</span>(msg){
+                <span style="color:#794938">if</span>(msg <span style="color:#794938">==</span> <span style="color:#0b6125">'ok'</span>){
+                    <span style="color:#a71d5d;font-style:italic">var</span> dateSplit <span style="color:#794938">=</span> date.<span style="color:#693a17">split</span>(<span style="color:#0b6125">"-"</span>);
+                    <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#eventTitle</span>')<span style="color:#693a17">.val</span>(<span style="color:#0b6125">''</span>);
+                    <span style="color:#693a17">alert</span>(<span style="color:#0b6125">'Event Created Successfully.'</span>);
+                    getCalendar(<span style="color:#0b6125">'calendar_div'</span>,dateSplit[<span style="color:#811f24;font-weight:700">0</span>],dateSplit[<span style="color:#811f24;font-weight:700">1</span>]);
+                }<span style="color:#794938">else</span>{
+                    <span style="color:#693a17">alert</span>(<span style="color:#0b6125">'Some problem occurred, please try again.'</span>);
+                }
+            }
+        });
+    });
+});
+</pre>
+<h2>Complete code of <code>functions.php</code> File</h2>
+<p>A comment label (<span style="color: #FF8000">//For&nbsp;Add&nbsp;Event</span>) is defined before the newly added code for Add Event functionality. It will help you to find the extended code in <code>functions.php</code> file.</p>
+<pre><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Function&nbsp;requested&nbsp;by&nbsp;Ajax<br />&nbsp;*/<br /></span><span style="color: #007700">if(isset(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'func'</span><span style="color: #007700">])&nbsp;&amp;&amp;&nbsp;!empty(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'func'</span><span style="color: #007700">])){<br />&nbsp;&nbsp;&nbsp;&nbsp;switch(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'func'</span><span style="color: #007700">]){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #DD0000">'getCalender'</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">getCalender</span><span style="color: #007700">(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'year'</span><span style="color: #007700">],</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'month'</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #DD0000">'getEvents'</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">getEvents</span><span style="color: #007700">(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'date'</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//For&nbsp;Add&nbsp;Event<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">case&nbsp;</span><span style="color: #DD0000">'addEvent'</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">addEvent</span><span style="color: #007700">(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'date'</span><span style="color: #007700">],</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'title'</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Get&nbsp;calendar&nbsp;full&nbsp;HTML<br />&nbsp;*/<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">getCalender</span><span style="color: #007700">(</span><span style="color: #0000BB">$year&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,</span><span style="color: #0000BB">$month&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dateYear&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$year&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">)?</span><span style="color: #0000BB">$year</span><span style="color: #007700">:</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"Y"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dateMonth&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$month&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">)?</span><span style="color: #0000BB">$month</span><span style="color: #007700">:</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"m"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dateYear</span><span style="color: #007700">.</span><span style="color: #DD0000">'-'</span><span style="color: #007700">.</span><span style="color: #0000BB">$dateMonth</span><span style="color: #007700">.</span><span style="color: #DD0000">'-01'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$currentMonthFirstDay&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"N"</span><span style="color: #007700">,</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$totalDaysOfMonth&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">cal_days_in_month</span><span style="color: #007700">(</span><span style="color: #0000BB">CAL_GREGORIAN</span><span style="color: #007700">,</span><span style="color: #0000BB">$dateMonth</span><span style="color: #007700">,</span><span style="color: #0000BB">$dateYear</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$totalDaysOfMonthDisplay&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$currentMonthFirstDay&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">7</span><span style="color: #007700">)?(</span><span style="color: #0000BB">$totalDaysOfMonth</span><span style="color: #007700">):(</span><span style="color: #0000BB">$totalDaysOfMonth&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$currentMonthFirstDay</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$boxDisplay&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$totalDaysOfMonthDisplay&nbsp;</span><span style="color: #007700">&lt;=&nbsp;</span><span style="color: #0000BB">35</span><span style="color: #007700">)?</span><span style="color: #0000BB">35</span><span style="color: #007700">:</span><span style="color: #0000BB">42</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;<br /></span>    &lt;<span style="color:#bf4f24">div</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"calender_section"</span>>
+        &lt;<span style="color:#bf4f24">h2</span>>
+            &lt;<span style="color:#bf4f24">a</span> <span style="color:#bf4f24">href</span>=<span style="color:#0b6125">"javascript:void(0);"</span> <span style="color:#bf4f24">onclick</span>=<span style="color:#0b6125">"getCalendar('calendar_div','<span style="background:rgba(111,139,186,0.15);color:#080808"><span style="color: #0000BB">&lt;?php&nbsp;echo date</span><span style="color: #007700">(</span><span style="color: #DD0000">"Y"</span><span style="color: #007700">,</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">.</span><span style="color: #DD0000">' - 1 Month'</span><span style="color: #007700">));</span><span style="color: #0000BB"> ?&gt;</span></span>','<span style="background:rgba(111,139,186,0.15);color:#080808"><span style="color: #0000BB">&lt;?php&nbsp;echo date</span><span style="color: #007700">(</span><span style="color: #DD0000">"m"</span><span style="color: #007700">,</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">.</span><span style="color: #DD0000">' - 1 Month'</span><span style="color: #007700">));</span><span style="color: #0000BB"> ?&gt;</span></span>');"</span>><span style="color:#811f24;font-weight:700">&amp;lt;</span><span style="color:#811f24;font-weight:700">&amp;lt;</span>&lt;/<span style="color:#bf4f24">a</span>>
+            &lt;<span style="color:#bf4f24">select</span> <span style="color:#bf4f24">name</span>=<span style="color:#0b6125">"month_dropdown"</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"month_dropdown dropdown"</span>><span style="color: #0000BB">&lt;?php&nbsp;echo getAllMonths</span><span style="color: #007700">(</span><span style="color: #0000BB">$dateMonth</span><span style="color: #007700">);</span><span style="color: #0000BB"> ?&gt;</span>&lt;/<span style="color:#bf4f24">select</span>>
+            &lt;<span style="color:#bf4f24">select</span> <span style="color:#bf4f24">name</span>=<span style="color:#0b6125">"year_dropdown"</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"year_dropdown dropdown"</span>><span style="color: #0000BB">&lt;?php&nbsp;echo getYearList</span><span style="color: #007700">(</span><span style="color: #0000BB">$dateYear</span><span style="color: #007700">);</span><span style="color: #0000BB"> ?&gt;</span>&lt;/<span style="color:#bf4f24">select</span>>
+            &lt;<span style="color:#bf4f24">a</span> <span style="color:#bf4f24">href</span>=<span style="color:#0b6125">"javascript:void(0);"</span> <span style="color:#bf4f24">onclick</span>=<span style="color:#0b6125">"getCalendar('calendar_div','<span style="background:rgba(111,139,186,0.15);color:#080808">&lt;?php&nbsp;echo date</span><span style="color: #007700">(</span><span style="color: #DD0000">"Y"</span><span style="color: #007700">,</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">.</span><span style="color: #DD0000">' + 1 Month'</span><span style="color: #007700">));</span><span style="color: #0000BB"> ?&gt;</span></span>','<span style="background:rgba(111,139,186,0.15);color:#080808"><span style="color: #0000BB">&lt;?php&nbsp;echo date</span><span style="color: #007700">(</span><span style="color: #DD0000">"m"</span><span style="color: #007700">,</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">.</span><span style="color: #DD0000">' + 1 Month'</span><span style="color: #007700">));</span><span style="color: #0000BB"> ?&gt;</span>');"</span>><span style="color:#811f24;font-weight:700">&amp;gt;</span><span style="color:#811f24;font-weight:700">&amp;gt;</span>&lt;/<span style="color:#bf4f24">a</span>>
+        &lt;/<span style="color:#bf4f24">h2</span>>
+        &lt;<span style="color:#bf4f24">div</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"event_list"</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"none"</span>>&lt;/<span style="color:#bf4f24">div</span>>
+        <span style="color:#5a525f;font-style:italic">&lt;!--For Add Event--></span>
+        &lt;<span style="color:#bf4f24">div</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"event_add"</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"none"</span>>
+            &lt;<span style="color:#bf4f24">p</span>>Add Event on &lt;<span style="color:#bf4f24">span</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"eventDateView"</span>>&lt;/<span style="color:#bf4f24">span</span>>&lt;/<span style="color:#bf4f24">p</span>>
+            &lt;<span style="color:#bf4f24">p</span>>&lt;<span style="color:#bf4f24">b</span>>Event Title: &lt;/<span style="color:#bf4f24">b</span>>&lt;<span style="color:#bf4f24">input</span> <span style="color:#bf4f24">type</span>=<span style="color:#0b6125">"text"</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"eventTitle"</span> <span style="color:#bf4f24">value</span>=<span style="color:#0b6125">""</span>/>&lt;/<span style="color:#bf4f24">p</span>>
+            &lt;<span style="color:#bf4f24">input</span> <span style="color:#bf4f24">type</span>=<span style="color:#0b6125">"hidden"</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"eventDate"</span> <span style="color:#bf4f24">value</span>=<span style="color:#0b6125">""</span>/>
+            &lt;<span style="color:#bf4f24">input</span> <span style="color:#bf4f24">type</span>=<span style="color:#0b6125">"button"</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"addEventBtn"</span> <span style="color:#bf4f24">value</span>=<span style="color:#0b6125">"Add"</span>/>
+        &lt;/<span style="color:#bf4f24">div</span>>
+        &lt;<span style="color:#bf4f24">div</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"calender_section_top"</span>>
+            &lt;<span style="color:#bf4f24">ul</span>>
+                &lt;<span style="color:#bf4f24">li</span>>Sun&lt;/<span style="color:#bf4f24">li</span>>
+                &lt;<span style="color:#bf4f24">li</span>>Mon&lt;/<span style="color:#bf4f24">li</span>>
+                &lt;<span style="color:#bf4f24">li</span>>Tue&lt;/<span style="color:#bf4f24">li</span>>
+                &lt;<span style="color:#bf4f24">li</span>>Wed&lt;/<span style="color:#bf4f24">li</span>>
+                &lt;<span style="color:#bf4f24">li</span>>Thu&lt;/<span style="color:#bf4f24">li</span>>
+                &lt;<span style="color:#bf4f24">li</span>>Fri&lt;/<span style="color:#bf4f24">li</span>>
+                &lt;<span style="color:#bf4f24">li</span>>Sat&lt;/<span style="color:#bf4f24">li</span>>
+            &lt;/<span style="color:#bf4f24">ul</span>>
+        &lt;/<span style="color:#bf4f24">div</span>>
+        &lt;<span style="color:#bf4f24">div</span> <span style="color:#bf4f24">id</span><span style="color:#794938">=</span><span style="color:#0b6125">"calender_section_bot"</span>>
+            &lt;<span style="color:#bf4f24">ul</span>><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$dayCount&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(</span><span style="color: #0000BB">$cb</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">;</span><span style="color: #0000BB">$cb</span><span style="color: #007700">&lt;=</span><span style="color: #0000BB">$boxDisplay</span><span style="color: #007700">;</span><span style="color: #0000BB">$cb</span><span style="color: #007700">++){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if((</span><span style="color: #0000BB">$cb&nbsp;</span><span style="color: #007700">&gt;=&nbsp;</span><span style="color: #0000BB">$currentMonthFirstDay</span><span style="color: #007700">+</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$currentMonthFirstDay&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">7</span><span style="color: #007700">)&nbsp;&amp;&amp;&nbsp;</span><span style="color: #0000BB">$cb&nbsp;</span><span style="color: #007700">&lt;=&nbsp;(</span><span style="color: #0000BB">$totalDaysOfMonthDisplay</span><span style="color: #007700">)){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Current&nbsp;date<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$currentDate&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dateYear</span><span style="color: #007700">.</span><span style="color: #DD0000">'-'</span><span style="color: #007700">.</span><span style="color: #0000BB">$dateMonth</span><span style="color: #007700">.</span><span style="color: #DD0000">'-'</span><span style="color: #007700">.</span><span style="color: #0000BB">$dayCount</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$eventNum&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Include&nbsp;db&nbsp;configuration&nbsp;file<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'dbConfig.php'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Get&nbsp;number&nbsp;of&nbsp;events&nbsp;based&nbsp;on&nbsp;the&nbsp;current&nbsp;date<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;title&nbsp;FROM&nbsp;events&nbsp;WHERE&nbsp;date&nbsp;=&nbsp;'"</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">"'&nbsp;AND&nbsp;status&nbsp;=&nbsp;1"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$eventNum&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">num_rows</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Define&nbsp;date&nbsp;cell&nbsp;color<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"Y-m-d"</span><span style="color: #007700">))){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;li&nbsp;date="'</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">'"&nbsp;class="grey&nbsp;date_cell"&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}elseif(</span><span style="color: #0000BB">$eventNum&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;li&nbsp;date="'</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">'"&nbsp;class="light_sky&nbsp;date_cell"&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;li&nbsp;date="'</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">'"&nbsp;class="date_cell"&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Date&nbsp;cell<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;span&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$dayCount</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;/span&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Hover&nbsp;event&nbsp;popup<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;div&nbsp;id="date_popup_'</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">'"&nbsp;class="date_popup_wrap&nbsp;none"&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;div&nbsp;class="date_window"&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;div&nbsp;class="popup_event"&gt;Events&nbsp;('</span><span style="color: #007700">.</span><span style="color: #0000BB">$eventNum</span><span style="color: #007700">.</span><span style="color: #DD0000">')&lt;/div&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;(</span><span style="color: #0000BB">$eventNum&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)?</span><span style="color: #DD0000">'&lt;a&nbsp;href="javascript:;"&nbsp;onclick="getEvents(\''</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">'\');"&gt;view&nbsp;events&lt;/a&gt;&lt;br/&gt;'</span><span style="color: #007700">:</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//For&nbsp;Add&nbsp;Event<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;a&nbsp;href="javascript:;"&nbsp;onclick="addEvent(\''</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">'\');"&gt;add&nbsp;event&lt;/a&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;/div&gt;&lt;/div&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;/li&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dayCount</span><span style="color: #007700">++;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">}else{&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span>                &lt;<span style="color:#bf4f24">li</span>>&lt;<span style="color:#bf4f24">span</span>><span style="color:#811f24;font-weight:700">&amp;nbsp;</span>&lt;/<span style="color:#bf4f24">span</span>>&lt;/<span style="color:#bf4f24">li</span>><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">}&nbsp;}&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span>            &lt;/<span style="color:#bf4f24">ul</span>>
+        &lt;/<span style="color:#bf4f24">div</span>>
+    &lt;/<span style="color:#bf4f24">div</span>><br /><br />    &lt;<span style="color:#bf4f24">script</span> <span style="color:#bf4f24">type</span>=<span style="color:#0b6125">"text/javascript"</span>><br />        <span style="color:#a71d5d;font-style:italic">function</span> <span style="color:#bf4f24">getCalendar</span>(target_div,year,month){
+            <span style="color:#794938">$</span><span style="color:#693a17">.ajax</span>({
+                type:<span style="color:#0b6125">'POST'</span>,
+                url:<span style="color:#0b6125">'functions.php'</span>,
+                data:<span style="color:#0b6125">'func=getCalender&amp;year='</span><span style="color:#794938">+</span>year<span style="color:#794938">+</span><span style="color:#0b6125">'&amp;month='</span><span style="color:#794938">+</span>month,
+                <span style="color:#bf4f24">success</span>:<span style="color:#a71d5d;font-style:italic">function</span>(html){
+                    <span style="color:#691c97">$</span>('#'<span style="color:#794938">+</span>target_div)<span style="color:#693a17">.html</span>(html);
+                }
+            });
+        }
+        
+        <span style="color:#a71d5d;font-style:italic">function</span> <span style="color:#bf4f24">getEvents</span>(date){
+            <span style="color:#794938">$</span><span style="color:#693a17">.ajax</span>({
+                type:<span style="color:#0b6125">'POST'</span>,
+                url:<span style="color:#0b6125">'functions.php'</span>,
+                data:<span style="color:#0b6125">'func=getEvents&amp;date='</span><span style="color:#794938">+</span>date,
+                <span style="color:#bf4f24">success</span>:<span style="color:#a71d5d;font-style:italic">function</span>(html){
+                    <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#event_list</span>')<span style="color:#693a17">.html</span>(html);
+                    <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#event_add</span>')<span style="color:#693a17">.slideUp</span>(<span style="color:#0b6125">'slow'</span>);
+                    <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#event_list</span>')<span style="color:#693a17">.slideDown</span>(<span style="color:#0b6125">'slow'</span>);
+                }
+            });
+        }
+        <span style="color:#5a525f;font-style:italic">//For Add Event</span>
+        <span style="color:#a71d5d;font-style:italic">function</span> <span style="color:#bf4f24">addEvent</span>(date){
+            <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#eventDate</span>')<span style="color:#693a17">.val</span>(date);
+            <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#eventDateView</span>')<span style="color:#693a17">.html</span>(date);
+            <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#event_list</span>')<span style="color:#693a17">.slideUp</span>(<span style="color:#0b6125">'slow'</span>);
+            <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#event_add</span>')<span style="color:#693a17">.slideDown</span>(<span style="color:#0b6125">'slow'</span>);
+        }
+        <span style="color:#5a525f;font-style:italic">//For Add Event</span>
+        <span style="color:#691c97">$</span>(<span style="color:#691c97">document</span>)<span style="color:#693a17">.ready</span>(<span style="color:#a71d5d;font-style:italic">function</span>(){
+            <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#addEventBtn</span>').on(<span style="color:#0b6125">'click'</span>,<span style="color:#a71d5d;font-style:italic">function</span>(){
+                <span style="color:#a71d5d;font-style:italic">var</span> date <span style="color:#794938">=</span> <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#eventDate</span>')<span style="color:#693a17">.val</span>();
+                <span style="color:#a71d5d;font-style:italic">var</span> title <span style="color:#794938">=</span> <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#eventTitle</span>')<span style="color:#693a17">.val</span>();
+                <span style="color:#794938">$</span><span style="color:#693a17">.ajax</span>({
+                    type:<span style="color:#0b6125">'POST'</span>,
+                    url:<span style="color:#0b6125">'functions.php'</span>,
+                    data:<span style="color:#0b6125">'func=addEvent&amp;date='</span><span style="color:#794938">+</span>date<span style="color:#794938">+</span><span style="color:#0b6125">'&amp;title='</span><span style="color:#794938">+</span>title,
+                    <span style="color:#bf4f24">success</span>:<span style="color:#a71d5d;font-style:italic">function</span>(msg){
+                        <span style="color:#794938">if</span>(msg <span style="color:#794938">==</span> <span style="color:#0b6125">'ok'</span>){
+                            <span style="color:#a71d5d;font-style:italic">var</span> dateSplit <span style="color:#794938">=</span> date.<span style="color:#693a17">split</span>(<span style="color:#0b6125">"-"</span>);
+                            <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#eventTitle</span>')<span style="color:#693a17">.val</span>(<span style="color:#0b6125">''</span>);
+                            <span style="color:#693a17">alert</span>(<span style="color:#0b6125">'Event Created Successfully.'</span>);
+                            getCalendar(<span style="color:#0b6125">'calendar_div'</span>,dateSplit[<span style="color:#811f24;font-weight:700">0</span>],dateSplit[<span style="color:#811f24;font-weight:700">1</span>]);
+                     <span style="color:#794938">&amp;</span>nbnbsp;  }<span style="color:#794938">else</span>{
+                            <span style="color:#693a17">alert</span>(<span style="color:#0b6125">'Some problem occurred, please try again.'</span>);
+                        }
+                    }
+                });
+            });
+        });
+        
+        <span style="color:#691c97">$</span>(<span style="color:#691c97">document</span>)<span style="color:#693a17">.ready</span>(<span style="color:#a71d5d;font-style:italic">function</span>(){
+            <span style="color:#691c97">$</span>('<span style="color:#bf4f24">.date_cell</span>').mouseenter(<span style="color:#a71d5d;font-style:italic">function</span>(){
+                date <span style="color:#794938">=</span> <span style="color:#691c97">$</span>(<span style="color:#234a97">this</span>)<span style="color:#693a17">.attr</span>(<span style="color:#0b6125">'date'</span>);
+                <span style="color:#691c97">$</span>("<span style="color:#bf4f24">.date_popup_wrap</span>")<span style="color:#693a17">.fadeOut</span>();
+                <span style="color:#691c97">$</span>("<span style="color:#bf4f24">#date_popup_</span>"<span style="color:#794938">+</span>date)<span style="color:#693a17">.fadeIn</span>();    
+            });
+            <span style="color:#691c97">$</span>('<span style="color:#bf4f24">.date_cell</span>').mouseleave(<span style="color:#a71d5d;font-style:italic">function</span>(){
+                <span style="color:#691c97">$</span>("<span style="color:#bf4f24">.date_popup_wrap</span>")<span style="color:#693a17">.fadeOut</span>();        
+            });
+            <span style="color:#691c97">$</span>('<span style="color:#bf4f24">.month_dropdown</span>').on(<span style="color:#0b6125">'change'</span>,<span style="color:#a71d5d;font-style:italic">function</span>(){
+                getCalendar(<span style="color:#0b6125">'calendar_div'</span>,<span style="color:#691c97">$</span>('<span style="color:#bf4f24">.year_dropdown</span>')<span style="color:#693a17">.val</span>(),<span style="color:#691c97">$</span>('<span style="color:#bf4f24">.month_dropdown</span>')<span style="color:#693a17">.val</span>());
+            });
+            <span style="color:#691c97">$</span>('<span style="color:#bf4f24">.year_dropdown</span>').on(<span style="color:#0b6125">'change'</span>,<span style="color:#a71d5d;font-style:italic">function</span>(){
+                getCalendar(<span style="color:#0b6125">'calendar_div'</span>,<span style="color:#691c97">$</span>('<span style="color:#bf4f24">.year_dropdown</span>')<span style="color:#693a17">.val</span>(),<span style="color:#691c97">$</span>('<span style="color:#bf4f24">.month_dropdown</span>')<span style="color:#693a17">.val</span>());
+            });
+            <span style="color:#691c97">$</span>(<span style="color:#691c97">document</span>)<span style="color:#693a17">.click</span>(<span style="color:#a71d5d;font-style:italic">function</span>(){
+                <span style="color:#691c97">$</span>('<span style="color:#bf4f24">#event_list</span>')<span style="color:#693a17">.slideUp</span>(<span style="color:#0b6125">'slow'</span>);
+            });
+        });<br />    &lt;/<span style="color:#bf4f24">script</span>><br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">}<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Get&nbsp;months&nbsp;options&nbsp;list.<br />&nbsp;*/<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">getAllMonths</span><span style="color: #007700">(</span><span style="color: #0000BB">$selected&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;for(</span><span style="color: #0000BB">$i</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">;</span><span style="color: #0000BB">$i</span><span style="color: #007700">&lt;=</span><span style="color: #0000BB">12</span><span style="color: #007700">;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">01</span><span style="color: #007700">)?</span><span style="color: #DD0000">'0'</span><span style="color: #007700">.</span><span style="color: #0000BB">$i</span><span style="color: #007700">:</span><span style="color: #0000BB">$i</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$selectedOpt&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">$selected</span><span style="color: #007700">)?</span><span style="color: #DD0000">'selected'</span><span style="color: #007700">:</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'&lt;option&nbsp;value="'</span><span style="color: #007700">.</span><span style="color: #0000BB">$value</span><span style="color: #007700">.</span><span style="color: #DD0000">'"&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$selectedOpt</span><span style="color: #007700">.</span><span style="color: #DD0000">'&nbsp;&gt;'</span><span style="color: #007700">.</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"F"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mktime</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)).</span><span style="color: #DD0000">'&lt;/option&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$options</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Get&nbsp;years&nbsp;options&nbsp;list.<br />&nbsp;*/<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">getYearList</span><span style="color: #007700">(</span><span style="color: #0000BB">$selected&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;for(</span><span style="color: #0000BB">$i</span><span style="color: #007700">=</span><span style="color: #0000BB">2015</span><span style="color: #007700">;</span><span style="color: #0000BB">$i</span><span style="color: #007700">&lt;=</span><span style="color: #0000BB">2025</span><span style="color: #007700">;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$selectedOpt&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">$selected</span><span style="color: #007700">)?</span><span style="color: #DD0000">'selected'</span><span style="color: #007700">:</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'&lt;option&nbsp;value="'</span><span style="color: #007700">.</span><span style="color: #0000BB">$i</span><span style="color: #007700">.</span><span style="color: #DD0000">'"&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$selectedOpt</span><span style="color: #007700">.</span><span style="color: #DD0000">'&nbsp;&gt;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$i</span><span style="color: #007700">.</span><span style="color: #DD0000">'&lt;/option&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$options</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Get&nbsp;events&nbsp;by&nbsp;date<br />&nbsp;*/<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">getEvents</span><span style="color: #007700">(</span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Include&nbsp;db&nbsp;configuration&nbsp;file<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'dbConfig.php'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$eventListHTML&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">?</span><span style="color: #0000BB">$date</span><span style="color: #007700">:</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"Y-m-d"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Get&nbsp;events&nbsp;based&nbsp;on&nbsp;the&nbsp;current&nbsp;date<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;title&nbsp;FROM&nbsp;events&nbsp;WHERE&nbsp;date&nbsp;=&nbsp;'"</span><span style="color: #007700">.</span><span style="color: #0000BB">$date</span><span style="color: #007700">.</span><span style="color: #DD0000">"'&nbsp;AND&nbsp;status&nbsp;=&nbsp;1"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$result</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">num_rows&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$eventListHTML&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'&lt;h2&gt;Events&nbsp;on&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"l,&nbsp;d&nbsp;M&nbsp;Y"</span><span style="color: #007700">,</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">)).</span><span style="color: #DD0000">'&lt;/h2&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$eventListHTML&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'&lt;ul&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(</span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetch_assoc</span><span style="color: #007700">()){&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$eventListHTML&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'&lt;li&gt;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">'title'</span><span style="color: #007700">].</span><span style="color: #DD0000">'&lt;/li&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$eventListHTML&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'&lt;/ul&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$eventListHTML</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">/*<br />&nbsp;*&nbsp;Add&nbsp;event&nbsp;to&nbsp;date<br />&nbsp;*/<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">addEvent</span><span style="color: #007700">(</span><span style="color: #0000BB">$date</span><span style="color: #007700">,</span><span style="color: #0000BB">$title</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Include&nbsp;db&nbsp;configuration&nbsp;file<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'dbConfig.php'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$currentDate&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"Y-m-d&nbsp;H:i:s"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Insert&nbsp;the&nbsp;event&nbsp;data&nbsp;into&nbsp;database<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$insert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;events&nbsp;(title,date,created,modified)&nbsp;VALUES&nbsp;('"</span><span style="color: #007700">.</span><span style="color: #0000BB">$title</span><span style="color: #007700">.</span><span style="color: #DD0000">"','"</span><span style="color: #007700">.</span><span style="color: #0000BB">$date</span><span style="color: #007700">.</span><span style="color: #DD0000">"','"</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">"','"</span><span style="color: #007700">.</span><span style="color: #0000BB">$currentDate</span><span style="color: #007700">.</span><span style="color: #DD0000">"')"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$insert</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'ok'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}else{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'err'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span></pre>
+<h2>Conclusion</h2>
+<p>That&#8217;s enough! you only need to modify the <code>functions.php</code> file, rest files would be the same as like the first part. The next part of the PHP event calendar tutorial would be extended with the delete event functionality.</p>
+</p>
+        <p class="donateTxt">Are you want to get implementation help, or modify or extend the functionality of this script? <a href="javascript:void(0);" style="color:#f92d50;font-style: italic;" data-toggle="modal" data-target="#requestModal">Submit paid service request</a></p>
+                <div class="img_center demo-links" id="ProjectDemoDownload">
+		<a id="DownloadProject" class="btn_link green" href="https://www.codexworld.com/downloads/add-event-to-calendar-using-jquery-ajax-php"><i class="glyphicon glyphicon-download"></i>Download Source Code</a>        </div>
+                </div>
+        <div class="details-page-ad-bottom"><!-- PageBottomRectangle -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-5750766974376423"
+     data-ad-slot="2412776099"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>        <!-- Author Box Start -->
+        		<!-- Author Box end -->
+                <div class="codex-end">
+            <div class="article-nav">
+                <div class="article-nav__link-container article-nav__prev">
+                                        <a class="article-nav__link" title="Login with Facebook in CodeIgniter" href="https://www.codexworld.com/facebook-login-codeigniter/">
+                        <div class="article-nav__link-text-container"><span class="article-nav__subtitle">Previous</span>
+                        <div class="article-nav__row">
+                            <div class="article-nav__icon"><i class="glyphicon glyphicon-arrow-left"></i></div>
+                            <div class="article-nav__link-title">Login with Facebook in CodeIgniter</div>
+                        </div>
+                        </div>
+                    </a>
+                                    </div>
+                <div class="article-nav__link-container article-nav__next">
+                                        <a class="article-nav__link" title="Get Google Maps as an Image using Google Static Maps API" href="https://www.codexworld.com/google-maps-image-using-google-static-maps-api/">
+                        <div class="article-nav__link-text-container"><span class="article-nav__subtitle">Next</span>
+                        <div class="article-nav__row">
+                            <div class="article-nav__link-title">Get Google Maps as an Image using Google Static Maps API</div>
+                            <div class="article-nav__icon"><i class="glyphicon glyphicon-arrow-right"></i></div>
+                        </div>
+                        </div>
+                    </a>
+                                    </div>
+            </div>
+        </div>
+    
+    
+        <div class="recomend-head"><h4>Recommended Tutorials For You</h4></div>
+        <div class="bar-content">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- CodexWorldMatchedContent -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5750766974376423"
+             data-ad-slot="2166452094"
+             data-ad-format="autorelaxed"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </div>
+<div class="bar-footer"><!-- FooterLinksRenponsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5750766974376423"
+     data-ad-slot="2211144895"
+     data-ad-format="link"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>    
+        <!-- You can start editing here. -->
+<div class="total-comments comment-respond"><h2><span class="comment-count">24 Comments</span></h2></div>
+<div id="comments">
+	<ol class="commentlist clearfix">
+			<li class="comment even thread-even depth-1" id="li-comment-54952" class="comment">
+		<div id="comment-54952" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Hans Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Thanks a lot</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>March 20, 2018 at 8:56 PM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-54384" class="comment">
+		<div id="comment-54384" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Jan Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Hi</p>
+<p>How can i change the language for the calendar (months) into Danish?</p>
+<p>Best regards<br />
+Jan</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>February 25, 2018 at 1:17 PM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-50634" class="comment">
+		<div id="comment-50634" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Mostafa Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>How to change the first day of the week</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>October 20, 2017 at 6:13 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-50522" class="comment">
+		<div id="comment-50522" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Farzan Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Please I can&#8217;t find the css file for this ,where can i find it?. I need it urgently</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>October 17, 2017 at 9:48 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+<ul class="children">
+	<li class="comment byuser comment-author-nitya192265 bypostauthor even depth-2" id="li-comment-50535" class="comment">
+		<div id="comment-50535" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">CodexWorld Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Download the source code, it contains all the required files including CSS.</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>October 17, 2017 at 7:31 PM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-50289" class="comment">
+		<div id="comment-50289" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Sara Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Thank you for this script.<br />
+How i can change date-format italian??</p>
+<p>Thank you</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>October 9, 2017 at 3:16 PM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48877" class="comment">
+		<div id="comment-48877" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Creepy Banana Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>I hope there will be an edit and delete function. Thank you!</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>August 15, 2017 at 5:41 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-48867" class="comment">
+		<div id="comment-48867" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Jacob Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>I love the script</p>
+<p>But, my current problem is adding a new field to the database inserting.  I modify the code like i should but keep getting an error.</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>August 14, 2017 at 11:33 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-47777" class="comment">
+		<div id="comment-47777" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Neha Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Hey Admin I want Same calender and functionality in codeigniter with bootstrap From whre I can Get Can You please help????</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>July 7, 2017 at 12:34 PM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+<ul class="children">
+	<li class="comment byuser comment-author-nitya192265 bypostauthor odd alt depth-2" id="li-comment-47819" class="comment">
+		<div id="comment-47819" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">CodexWorld Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>We will try to publish your requested tutorial soon. Meanwhile, subscribe our newsletter and follow us on social media to get notified.</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>July 9, 2017 at 6:05 PM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-46929" class="comment">
+		<div id="comment-46929" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Shobith Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>How to delete an event..? can u please help me regarding this.</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>June 10, 2017 at 6:33 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-44100" class="comment">
+		<div id="comment-44100" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">POOJA Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>i want the events directly show inside date</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>March 30, 2017 at 9:10 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-40865" class="comment">
+		<div id="comment-40865" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Dinesh Kumar Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>how can i remove the events   which are inserted by user</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>February 10, 2017 at 10:19 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-40571" class="comment">
+		<div id="comment-40571" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Khristian Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Hi sir. there is no delete event can you help me about that so i can add it. Thanks alot 😀</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>February 4, 2017 at 5:32 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-38859" class="comment">
+		<div id="comment-38859" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Nnamdi Wakwe Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>This was very great. </p>
+<p>Is there a way to display the event titles in the date cells of the calendar? That would be very helpful</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>January 5, 2017 at 3:19 PM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-33590" class="comment">
+		<div id="comment-33590" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Wani Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Thank you. You helped me a lot.</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>October 30, 2016 at 11:41 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-31141" class="comment">
+		<div id="comment-31141" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Ugyen Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Thank you for the tutorial.<br />
+Please get me to delete the events from calendar.</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>September 14, 2016 at 9:27 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-30482" class="comment">
+		<div id="comment-30482" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Amir Naved Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Thank you so much for this<br />
+But give  soon delete option.</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>September 2, 2016 at 6:13 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-30467" class="comment">
+		<div id="comment-30467" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Lennart Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Hello, thanks for a great script!<br />
+But how to start the week on monday?</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>September 1, 2016 at 5:45 PM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-30406" class="comment">
+		<div id="comment-30406" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Marjul Hossain Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>how to delete an event</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>August 31, 2016 at 9:31 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-28286" class="comment">
+		<div id="comment-28286" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Digvijay Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Hi,<br />
+This looks good but I have one query, here we are manually adding the event. Can we call the event from database and show it?</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>June 25, 2016 at 6:38 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+<ul class="children">
+	<li class="comment byuser comment-author-nitya192265 bypostauthor odd alt depth-2" id="li-comment-28290" class="comment">
+		<div id="comment-28290" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">CodexWorld Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>We&#8217;ve already published this tutorial, see from here &#8211; <a href="http://www.codexworld.com/build-event-calendar-using-jquery-ajax-php/">http://www.codexworld.com/build-event-calendar-using-jquery-ajax-php/</a></p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>June 25, 2016 at 8:51 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-27776" class="comment">
+		<div id="comment-27776" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Monday Gabriel Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Hi,<br />
+You guys rock!</p>
+<p>Can we have a date range added and also displayed in the calendar?</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>June 9, 2016 at 6:40 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-26856" class="comment">
+		<div id="comment-26856" style="position:relative;" class="comment-body">
+			<div class="comment-author vcard">
+								                <div class="comment-author-name"><span class="fn">Thomas Said...</span></div>
+			</div>
+			<div class="comment_text_area">
+									
+				<div class="commentmetadata text">
+					<p><p>Very nice tutorial.</p>
+<p>Did you plan to add a function which allow the selection of days or weeks and then create an event for the day/week selection ?</p>
+<p>Thanks.</p>
+</p>
+                    <div class="comment-meta"><div class="date"><i class="icon-time"></i>May 16, 2016 at 9:53 AM</div></div>
+				</div>	
+                
+							</div>
+		</div>
+	</li>
+</li><!-- #comment-## -->
+	</ol>
+</div>
+<div class="commentPagination">
+</div>
+<div id="respond" class="comment-respond page-content clearfix">
+    <div class="boxedtitle page-title"><h2>Leave a reply</h2></div>
+    	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/add-event-to-calendar-using-jquery-ajax-php/#respond" style="display:none;">Cancel</a></small></h3>			<form action="https://www.codexworld.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<div id="respond-textarea"><p class="comment-form-comment"><label class="required" for="comment">Comment<span>*</span></label><textarea  id="comment" name="comment" cols="58" rows="8" aria-required="true" required></textarea></p></div><div id="respond-inputs" class="clearfix"><p >
+                  <label class="required" for="author">Your Name<span>*</span></label>
+									<input id="author" name="author" type="text" value="" size=""  aria-required="true" required /></p>
+<p>
+                  <label class="required" for="email">Your Email<span>*</span></label>
+									<input id="email" name="email" type="text" value="" size=""  aria-required="true" required /></p>
+<p class="last">
+                  <label class="required" for="url">Your Website</label>
+									<input id="url" name="url" type="text" value="" size="" />
+									</p></div>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1504' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="027bd4bd31" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="109"/></p>			</form>
+			</div><!-- #respond -->
+	</div>
+
+                        
+        
+        <!-- Footer Sticky Premium Script bar -->
+                
+        
+                
+	</div>
+<!-- Request Modal -->
+<div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Submit Your Requirement (price starts from $10)
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+            	<p class="reqStatusMsg"></p>
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label" for="reqName">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="reqName" placeholder="Your Name" required=""/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label" for="reqEmail">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="reqEmail" placeholder="Your Email" required=""/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label" for="reqMessage">Requirement</label>
+                    <div class="col-sm-10">
+                    	<textarea class="form-control" id="reqMessage" placeholder="Your Requirement"></textarea>
+                    </div>
+                  </div>
+                                  </form>   
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="submitRequest()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+function submitRequest(){
+	jQuery('.reqStatusMsg').html('');
+	var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+	var name = jQuery('#reqName').val();
+	var email = jQuery('#reqEmail').val();
+	var message = jQuery('#reqMessage').val();
+	var postTitle = 'Add Event to Calendar using jQuery, Ajax and PHP';
+	var postLink = 'https://www.codexworld.com/add-event-to-calendar-using-jquery-ajax-php/';
+	if(name.trim() == ''){
+		alert('Please enter your name.');
+		jQuery('#reqName').focus();
+		return false;	
+	}else if(email.trim() == ''){
+		alert('Please enter your email.');
+		jQuery('#reqEmail').focus();
+		return false;	
+	}else if(email.trim() != '' && !reg.test(email)){
+		alert('Please enter valid email.');
+		jQuery('#reqEmail').focus();
+		return false;	
+	}else if(message.trim() == ''){
+		alert('Please enter the summary of your requirement.');
+		jQuery('#reqMessage').focus();
+		return false;	
+	}else if(message.length < 25){
+		alert('Please enter your requirement in details.');
+		jQuery('#reqMessage').focus();
+		return false;	
+	}else{
+		jQuery.ajax({
+			type:'post',
+			url:'https://www.codexworld.com/wp-content/themes/techblog/ajax_request.php',
+			data:'name='+name+'&email='+email+'&message='+message+'&postTitle='+postTitle+'&postLink='+postLink+'&requestSubmit=1',
+			success:function(msg){
+				if(msg == 'ok'){
+					jQuery('#reqName').val('');
+					jQuery('#reqEmail').val('');
+					jQuery('#reqMessage').val('');
+					jQuery('.reqStatusMsg').html('<span style="color:green;font-size:16px;">Your request has been submitted successfully. We\'ll get back to you soon.</span>');	
+				}else{
+					jQuery('.reqStatusMsg').html('<span style="color:red;font-size:16px;">Some problem occurred, please try again.</span>');
+				}
+			}
+		});
+	}
+}
+</script>
+
+<div class="col-lg-4">
+<div class="SidebarBox SidebarBox_subscribe"><h5>SUBSCRIBE FOR FREE NEWSLETTER</h5><div class="btntEmailsub"><p>Join our 75,000+ subscribers and get the latest tutorials and resources, straight to your inbox.</p>    <form class="emailSubscribeFormHome" onsubmit="return false;">
+        <input id="subinput" name="email" onblur="if (this.value == &quot;&quot;) {this.value = &quot;Enter your email...&quot;;}" onfocus="if (this.value == &quot;Enter your email...&quot;) {this.value = &quot;&quot;}" type="text" value="Enter your email...">
+		<button class="sub-btn subscribeBtnHome button" onclick="emailSubscribeHome()">Subscribe</button>
+    </form>
+    
+    <div class="subSocialIcons social-icons-news"><ul><li class="facebook"><a href="https://www.facebook.com/codexworld" title="Like CW on Facebook" target="_blank">Facebook</a></li><li class="twitter"><a href="https://twitter.com/codexworldblog" title="Follow CW on Twitter" target="_blank">Twitter</a></li><li class="googleplus"><a href="https://plus.google.com/+codexworld" title="Follow CW on Google+" target="_blank">Google+</a></li><li class="linkedin"><a href="https://www.linkedin.com/company/codexworld" title="Follow CW on LinkedIn" target="_blank">LinkedIn</a></li><li class="pinterest"><a href="https://www.pinterest.com/codexworld" title="Follow CW on Pinterest" target="_blank">Pinterest</a></li><li class="youtube"><a href="https://www.youtube.com/codexworld" title="Subscribe HTT on YouTube" target="_blank">YouTube</a></li><li class="rss"><a href="https://feeds.feedburner.com/codexworld" title="Subscribe HTT RSS Feeds" target="_blank">RSS Feed</a></li></ul></div></div></div><div class="well widget-sidebar adsense_widget"><!-- RightSidebar300x600 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-5750766974376423"
+     data-ad-slot="6237639296"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="well widget-sidebar"><h4>TRENDING TUTORIALS</h4><div class="textwidget popular_post_widget"><ul>  <li><a title="Login with Facebook using PHP" href="https://www.codexworld.com/login-with-facebook-using-php/">Login with Facebook using PHP</a></li>
+    <li><a title="Login with Google Account using PHP" href="https://www.codexworld.com/login-with-google-api-using-php/">Login with Google Account using PHP</a></li>
+    <li><a title="PayPal Standard Payment Gateway Integration in PHP" href="https://www.codexworld.com/paypal-standard-payment-gateway-integration-php/">PayPal Standard Payment Gateway Integration in PHP</a></li>
+    <li><a title="Autocomplete Textbox using jQuery, PHP and MySQL" href="https://www.codexworld.com/autocomplete-textbox-using-jquery-php-mysql/">Autocomplete Textbox using jQuery, PHP and MySQL</a></li>
+    <li><a title="Dynamic Dependent Select Box using jQuery, Ajax and PHP" href="https://www.codexworld.com/dynamic-dependent-select-box-using-jquery-ajax-php/">Dynamic Dependent Select Box using jQuery, Ajax and PHP</a></li>
+    <li><a title="Using new Google reCAPTCHA with PHP" href="https://www.codexworld.com/new-google-recaptcha-with-php/">Using new Google reCAPTCHA with PHP</a></li>
+    <li><a title="Upload Multiple Images using jQuery, Ajax and PHP" href="https://www.codexworld.com/upload-multiple-images-using-jquery-ajax-php/">Upload Multiple Images using jQuery, Ajax and PHP</a></li>
+    <li><a title="Drag and Drop Reorder Images using jQuery, Ajax, PHP &#038; MySQL" href="https://www.codexworld.com/drag-drop-images-reorder-using-jquery-ajax-php-mysql/">Drag and Drop Reorder Images using jQuery, Ajax, PHP &#038; MySQL</a></li>
+  </ul></div></div><div class="well widget-sidebar adsense_widget"><!-- RightSidebarResponsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5750766974376423"
+     data-ad-slot="4435324496"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="well widget-sidebar"><h4>TOPICS<a href="https://www.codexworld.com/tutorial-topics/" class="widgetAllCat label label-warning">all topics</a></h4><div class="row textwidget tabCategory"><ul class="list-unstyled">  <li><a title="PHP" href="https://www.codexworld.com/tutorials/php/">PHP</a></li>
+    <li><a title="CodeIgniter" href="https://www.codexworld.com/tutorials/codeigniter/">CodeIgniter</a></li>
+    <li><a title="WordPress" href="https://www.codexworld.com/tutorials/wordpress/">WordPress</a></li>
+    <li><a title="JavaScript" href="https://www.codexworld.com/tutorials/javascript/">JavaScript</a></li>
+    <li><a title="Drupal" href="https://www.codexworld.com/tutorials/drupal/">Drupal</a></li>
+    <li><a title="GoogleMap" href="https://www.codexworld.com/tutorials/googlemap/">GoogleMap</a></li>
+    <li><a title="HTML&amp;CSS" href="https://www.codexworld.com/tutorials/html-css/">HTML&amp;CSS</a></li>
+    <li><a title="CakePHP" href="https://www.codexworld.com/tutorials/cakephp/">CakePHP</a></li>
+    <li><a title="Bootstrap" href="https://www.codexworld.com/tutorials/bootstrap/">Bootstrap</a></li>
+    <li><a title="Web Development" href="https://www.codexworld.com/tutorials/web-development/">Web Development</a></li>
+    <li><a title="PayPal" href="https://www.codexworld.com/tutorials/paypal/">PayPal</a></li>
+    <li><a title="GoogleAPI" href="https://www.codexworld.com/tutorials/googleapi/">GoogleAPI</a></li>
+  </ul></div></div><div class="well widget-sidebar"><h4>LATEST HOW TO GUIDES</h4><div class="textwidget latest_howto_widget"><ul>  <li><a title="How to Remove a Specific Parameter from URL Query String using PHP" href="https://www.codexworld.com/how-to/remove-specific-parameter-from-url-query-string-php/">How to Remove a Specific Parameter from URL Query String using PHP</a></li>
+    <li><a title="How to Sort Results Order by Best Match using LIKE in MySQL" href="https://www.codexworld.com/how-to/sort-results-order-by-best-match-using-like-in-mysql/">How to Sort Results Order by Best Match using LIKE in MySQL</a></li>
+    <li><a title="How to Insert Space Before Capital Letters in a String using PHP" href="https://www.codexworld.com/how-to/insert-space-before-capital-letters-in-string-using-php/">How to Insert Space Before Capital Letters in a String using PHP</a></li>
+    <li><a title="How to Validate Date String in PHP" href="https://www.codexworld.com/how-to/validate-date-input-string-in-php/">How to Validate Date String in PHP</a></li>
+    <li><a title="How to Force Download File from Remote Server in PHP" href="https://www.codexworld.com/how-to/force-download-file-from-remote-server-php/">How to Force Download File from Remote Server in PHP</a></li>
+  </ul></div></div><div class="well widget-sidebar adsense_widget adsSt_widget"><a href="https://www.codexworld.com/scripts/codeigniter-admin-panel/"><img src="https://www.codexworld.com/wp-content/uploads/2017/05/codeigniter-admin-ads-codexworld.png"/></a></div></div></div>
+</div>
+<footer class="footer" role="contentinfo">
+	<div class="footer_info">
+    	<div class="wrapper"> 
+        	        Copyright &copy; 2019 <a href="https://www.codexworld.com/" title="Programming Blog, Web Development, Tutorials, PHP, MySQL, jQuery, Ajax, WordPress, Drupal, CodeIgniter, CakePHP and Demos">CodexWorld</a>. All rights reserved.
+            &nbsp;&nbsp;<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://www.codexworld.com/wp-content/themes/techblog/images/cc-by-nc-nd.png" /></a>
+        	<ul>
+            	<li><a href="https://www.codexworld.com/about-us" title="About Us">About Us</a></li>
+                <li class="sep">|</li>
+                <li><a href="https://www.codexworld.com/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
+                <li class="sep">|</li>
+                <li><a href="https://www.codexworld.com/terms-conditions" title="Terms and Conditions">Terms & Conditions</a></li>
+                <li class="sep">|</li>
+            	<li><a href="https://www.codexworld.com/write-for-us" title="Write For Us">Write For Us</a></li>
+                <li class="sep">|</li>
+            	<li><a href="https://www.codexworld.com/advertise" title="Advertise on CodexWorld">Advertise</a></li>
+                <li class="sep">|</li>
+            	<li><a href="https://www.codexworld.com/contact" title="Contact">Contact</a></li>
+         	</ul>
+     	</div>
+  	</div> 
+</footer>
+<a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+
+<script type='text/javascript' src='https://www.codexworld.com/wp-content/plugins/jetpack/_inc/build/photon/photon.min.js?ver=20130122'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201905'></script>
+<script type='text/javascript' src='https://www.codexworld.com/wp-includes/js/wp-embed.min.js?ver=43bcfed3537b86b626eb324a274ecf58'></script>
+<script async="async" type='text/javascript' src='https://www.codexworld.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201905.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.9',blog:'91409221',post:'1504',tz:'0',srv:'www.codexworld.com'} ]);
+	_stq.push([ 'clickTrackerInit', '91409221', '1504' ]);
+</script>
+
+<!-- Request Modal -->
+<div class="modal fade" id="hireModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">
+                    Submit Your Requirements to Hire Us at a Reasonable Price 
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+            	<p class="hireStatusMsg"></p>
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label" for="hireName">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="hireName" placeholder="Your Name" required=""/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label" for="hireEmail">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="hireEmail" placeholder="Your Email" required=""/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label" for="hireMessage">Requirements</label>
+                    <div class="col-sm-10">
+                    	<textarea class="form-control" id="hireMessage" placeholder="Your Requirements" rows="8"></textarea>
+                    </div>
+                  </div>
+                                  </form>   
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="submitHireRequest();">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+function submitHireRequest(){
+	jQuery('.hireStatusMsg').html('');
+	var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+	var name = jQuery('#hireName').val();
+	var email = jQuery('#hireEmail').val();
+	var message = jQuery('#hireMessage').val();
+	var postTitle = 'Hire Us Request';
+	var postLink = 'https://www.codexworld.com/add-event-to-calendar-using-jquery-ajax-php/';
+	if(name.trim() == ''){
+		alert('Please enter your name.');
+		jQuery('#hireName').focus();
+		return false;	
+	}else if(email.trim() == ''){
+		alert('Please enter your email.');
+		jQuery('#hireEmail').focus();
+		return false;	
+	}else if(email.trim() != '' && !reg.test(email)){
+		alert('Please enter valid email.');
+		jQuery('#hireEmail').focus();
+		return false;	
+	}else if(message.trim() == ''){
+		alert('Please enter the summary of your requirement.');
+		jQuery('#hireMessage').focus();
+		return false;	
+	}else if(message.length < 25){
+		alert('Please enter your requirement in details.');
+		jQuery('#hireMessage').focus();
+		return false;	
+	}else{
+		jQuery.ajax({
+			type:'post',
+			url:'https://www.codexworld.com/wp-content/themes/techblog/ajax_request.php',
+			data:'name='+name+'&email='+email+'&message='+message+'&postTitle='+postTitle+'&postLink='+postLink+'&requestSubmit=1',
+			success:function(msg){
+				if(msg == 'ok'){
+					jQuery('#hireName').val('');
+					jQuery('#hireEmail').val('');
+					jQuery('#hireMessage').val('');
+					jQuery('.hireStatusMsg').html('<span style="color:green;font-size:16px;">Your request has been submitted successfully. We\'ll get back to you soon.</span>');	
+				}else{
+					jQuery('.hireStatusMsg').html('<span style="color:red;font-size:16px;">Some problem occurred, please try again.</span>');
+				}
+			}
+		});
+	}
+}
+</script>
+
+<script type="text/javascript">
+function emailSubscribeHome(){
+		jQuery('.emailSubsMsgHome').remove();
+    var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+		var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    //var name = jQuery('#subsName').val();
+		//var nameLower = name.toLowerCase();
+		var name = '';
+    var email = jQuery('#subinput').val();
+		/*if(name.trim() == '' ){
+			alert('Please enter your name.');
+        	jQuery('#subsName').focus();
+			return false;
+		}else if (!regName.test(name)){
+			alert('Please enter valid name (first & last name).');
+			jQuery('#subsName').focus();
+			return false;
+		}else if (nameLower.indexOf("codex") >= 0 && nameLower.indexOf("world") >= 0){
+			alert('Please enter valid name (first & last name).');
+			jQuery('#subsName').focus();
+			return false;
+		}else */if(email.trim() == '' ){
+			alert('Please enter your email.');
+        	jQuery('#subinput').focus();
+			return false;
+		}else if(email.trim() != '' && !reg.test(email)){
+			alert('Please enter valid email.');
+        	jQuery('#subinput').focus();
+			return false;
+		}else{
+        jQuery.ajax({
+            type:'POST',
+            url:'https://www.codexworld.com/subscription/subscribe.php',
+            dataType: "json",
+            data:{subscribeEmail:1,referrer:'codex_sidebar',name:name,email:email},
+            beforeSend: function () {
+                jQuery('.subscribeBtnHome').attr("disabled","disabled");
+                jQuery('.emailSubscribeFormHome').css('opacity', '.5');
+            },
+            success:function(data){
+                if(data.status == 'ok'){
+                    //jQuery('#subsName').val('');
+                    jQuery('#subinput').val('');
+                    jQuery('.emailSubscribeFormHome').prepend('<p class="emailSubsMsgHome" style="color:#FB4314;">A verification link has been sent to your email address, please check your email and verify.</p>');
+                }else if(data.status == 'ae'){
+                    //jQuery('#subsName').val('');
+                    jQuery('#subinput').val('');
+                    jQuery('.emailSubscribeFormHome').prepend('<p class="emailSubsMsgHome" style="color:#FB4314;">Your email already exists in our subscribers list.</p>');
+                }else{
+                    jQuery('.emailSubscribeFormHome').prepend('<span class="emailSubsMsgHome" style="color:#FB4314;">Some problem occurred, please try again.</span>');
+                }
+                jQuery('.subscribeBtnHome').removeAttr("disabled");
+                jQuery('.emailSubscribeFormHome').css('opacity', '');
+            }
+        });
+    }
+}
+</script>
+<script type="text/javascript" async >function generic_social_share(url){window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');return true;}</script>
+<script type="text/javascript" async >
+jQuery(document).ready(function(){
+    var stbox = jQuery(".adsSt_widget");
+    var stt = stbox.offset().top;
+    jQuery(document).scroll(function(){
+        var sta = jQuery(this).scrollTop();
+        if(sta > stt){
+            stbox.css({position:"fixed",top:40});
+        }else{
+            stbox.removeAttr("style");
+        }
+    });
+});
+</script>
+<script async>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-55035394-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type='text/javascript' async >
+jQuery(document).ready(function(){ jQuery(window).scroll(function(){ if (jQuery(this).scrollTop() > 100) { jQuery('#scroll').fadeIn(); } else { jQuery('#scroll').fadeOut(); } }); jQuery('#scroll').click(function(){ jQuery("html, body").animate({ scrollTop: 0 }, 600); return false; }); });
+</script>
+</body>
+</html>
+
+<!-- Dynamic page generated in 1.240 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-02-01 03:01:25 -->
+
+<!-- Compression = gzip -->
